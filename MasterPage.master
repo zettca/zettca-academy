@@ -1,0 +1,54 @@
+﻿<%@ Master Language="VB" CodeFile="MasterPage.master.vb" Inherits="MasterPage" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>ZETTCA Academy</title>
+    <script src="resources/jquery.js" type="text/javascript"></script>
+    <script src="resources/jquery-ui.js" type="text/javascript"></script>
+    <script src="resources/Script.js" type="text/javascript"></script>
+    <link href="resources/StyleSheet.css" rel="stylesheet" type="text/css" />
+    <link href="resources/jquery-ui.css" rel="stylesheet" type="text/css" />
+    <asp:ContentPlaceHolder id="cphHead" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <div id="menubar">
+        <ul id="userArea">
+            <li class="menu" runat="server">
+                <a id="aUserArea" runat="server">
+                    <asp:Label ID="lblTopName" runat="server" Text="Guest"></asp:Label>
+                    <asp:Image ID="imgTopAvatar" runat="server" Height="28" ImageUrl="~/resources/image/profile/default.png" />
+                </a>
+                <ul class="submenu">
+                    <li id="liLogin" runat="server"><a href="Login.aspx">Login</a></li>
+                    <li id="liProfile" runat="server"><a href="Profile.aspx">Profile</a></li>
+                    <li id="liAdminCP" runat="server"><a href="Admin.aspx">Admin CP</a></li>
+                    <li id="liLogout" runat="server"><a href="Logout.aspx">Logout</a></li>
+                </ul>
+            </li>
+        </ul>
+        <div id="links">
+            <a href="exercices.aspx">Practice</a>
+            <a href="highscores.aspx">Highscores</a>
+        </div>
+        <div id="logo">
+            <a href="default.aspx"><img src="resources/image/web/academy.png" alt="HOME"/></a>
+        </div>
+    </div>
+    <div id="wrapper">
+        <div id="content">
+            <form id="formPage" runat="server">
+                <asp:ContentPlaceHolder id="cphContent" runat="server"></asp:ContentPlaceHolder>
+            </form>
+        </div>
+    </div>
+    <div id="footer">
+        <div id="footCR">
+            ZETTCA ACADEMY <br />
+            &copy; ZETTCA Corporation&trade; 2013
+        </div>
+    </div>
+</body>
+</html>
